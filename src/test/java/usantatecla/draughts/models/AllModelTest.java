@@ -5,7 +5,9 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        BoardTest.class})
+        BoardTest.class,
+        ColorTest.class
+})
 public class AllModelTest {
 
 }
