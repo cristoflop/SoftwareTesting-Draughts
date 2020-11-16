@@ -11,7 +11,8 @@ import org.junit.runners.Suite;
         DirectionTest.class,
         PieceTest.class,
         StateTest.class,
-        TurnTest.class
+        TurnTest.class,
+        GameTest.class
 })
 public class AllModelTest {
 
