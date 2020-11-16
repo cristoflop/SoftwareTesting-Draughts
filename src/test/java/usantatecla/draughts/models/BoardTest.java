@@ -108,4 +108,50 @@ public class BoardTest {
         assertNull(this.board.getColor(this.coordinate1));
     }
 
+    @Test(expected = AssertionError.class)
+    public void testGivenNewBoardWhenGetTheColorOfThePieceInNullCoordinateThenExpectedAssertionError() {
+        this.board.getColor(null);
+    }
+
+    @Test
+    public void testGivenNewBoardAndCoordinateWhenIsAnEmptyCoordinateThenReturnTrue() {
+        boolean isEmpty = this.board.isEmpty(this.coordinate1);
+        assertTrue(isEmpty);
+    }
+
+    @Test
+    public void testGivenNewBoardAndCoordinateWhenIsNotAnEmptyCoordinateThenReturnFalse() {
+        this.board.put(this.coordinate1, this.draughtWhite);
+        boolean isEmpty = this.board.isEmpty(this.coordinate1);
+        assertFalse(isEmpty);
+    }
+
+    @Test
+    public void testGivenNewBoardWhenGetTheStringOfTheBoardThenTheSizeOfTheStringIsBiggerThanZero() {
+        String a = this.board.toString();
+        assertTrue(a.length() > 0);
+    }
+
+    @Test
+    public void testGivenTwoBoardWhenCompareThemIfTheyAreBothEmptyThenReturnTrue() {
+        Board other = new Board();
+        assertEquals(this.board, other);
+    }
+
+    @Test
+    public void testGivenTwoBoardWhenCompareThemIfBothHaveTheSamePiecesInTheSamePositionThenReturnTrue() {
+        Board other = new Board();
+        this.board.put(this.coordinate1, this.draughtBlack1);
+        other.put(this.coordinate1, this.draughtBlack2);
+        assertEquals(this.board, other);
+    }
+
+    @Test
+    public void testGivenTwoBoardWhenCompareThemIfBothHaveNotTheSamePiecesInTheSamePositionThenReturnFalse() {
+        Board other = new Board();
+        this.board.put(this.coordinate1, this.draughtBlack1);
+        other.put(this.coordinate2, this.draughtBlack2);
+        assertNotEquals(this.board, other);
+    }
+
 }
