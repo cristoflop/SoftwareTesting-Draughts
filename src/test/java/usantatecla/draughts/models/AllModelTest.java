@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
         BoardTest.class,
         ColorTest.class,
         CoordinateTest.class,
-        DirectionTest.class
+        DirectionTest.class,
+        PieceTest.class
 })
 public class AllModelTest {
 
