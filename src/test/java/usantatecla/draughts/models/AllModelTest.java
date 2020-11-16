@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
         ColorTest.class,
         CoordinateTest.class,
         DirectionTest.class,
-        PieceTest.class
+        PieceTest.class,
+        StateTest.class
 })
 public class AllModelTest {
 
