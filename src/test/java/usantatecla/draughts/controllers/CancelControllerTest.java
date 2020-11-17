@@ -8,24 +8,24 @@ import usantatecla.draughts.models.StateValue;
 
 import static org.junit.Assert.assertEquals;
 
-public class StartControllerTest {
+public class CancelControllerTest {
 
     private Game game;
     private State state;
-    private StartController startController;
+    private CancelController cancelController;
 
     @Before
     public void before() {
         this.game = new Game();
         this.state = new State();
-        this.startController = new StartController(this.game, this.state);
+        this.state.next();
+        this.cancelController = new CancelController(this.game, this.state);
     }
 
     @Test
-    public void testGivenStartControllerWhenCallStartMethodThenStateChangeToInGame() {
-        assertEquals(this.state.getValueState(), StateValue.INITIAL);
-        this.startController.start();
-        assertEquals(this.state.getValueState(), StateValue.IN_GAME);
+    public void testGivenCancelControllerWhenCallCancelMethodThenStateChangeToFinal() {
+        this.cancelController.cancel();
+        assertEquals(this.state.getValueState(), StateValue.FINAL);
     }
 
 }
