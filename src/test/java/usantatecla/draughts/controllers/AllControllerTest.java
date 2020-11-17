@@ -9,6 +9,7 @@ import org.junit.runners.Suite;
         CancelControllerTest.class,
         MoveControllerTest.class,
         PlayControllerTest.class,
+        ResumeControllerTest.class,
         LogicTest.class
 })
 public class AllControllerTest {
