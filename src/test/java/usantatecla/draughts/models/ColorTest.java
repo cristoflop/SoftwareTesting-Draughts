@@ -9,19 +9,19 @@ public class ColorTest {
 
     private Color white;
     private Color black;
-    private Coordinate coordinate0;
-    private Coordinate coordinate1;
-    private Coordinate coordinate2;
-    private Coordinate coordinate3;
+    private Coordinate coordinate43;
+    private Coordinate coordinate00;
+    private Coordinate coordinate70;
+    private Coordinate coordinate10;
 
     @Before
     public void before() {
         this.white = Color.WHITE;
         this.black = Color.BLACK;
-        this.coordinate0 = new Coordinate(4, 3);
-        this.coordinate1 = new Coordinate(0, 0);
-        this.coordinate2 = new Coordinate(7, 0);
-        this.coordinate3 = new Coordinate(1, 0);
+        this.coordinate43 = new Coordinate(4, 3);
+        this.coordinate00 = new Coordinate(0, 0);
+        this.coordinate70 = new Coordinate(7, 0);
+        this.coordinate10 = new Coordinate(1, 0);
     }
 
     @Test
@@ -46,25 +46,25 @@ public class ColorTest {
 
     @Test
     public void testGivenACoordinateWhenCoordinateIsBlackCoordinateAndIsInitialRowForWhiteColorThenReturnTheColorForThatCoordinate() {
-        Color color = Color.getInitialColor(this.coordinate2);
+        Color color = Color.getInitialColor(this.coordinate70);
         assertEquals(color, Color.WHITE);
     }
 
     @Test
     public void testGivenACoordinateWhenCoordinateIsBlackCoordinateAndIsInitialRowForBlackColorThenReturnTheColorForThatCoordinate() {
-        Color color = Color.getInitialColor(this.coordinate3);
+        Color color = Color.getInitialColor(this.coordinate10);
         assertEquals(color, Color.BLACK);
     }
 
     @Test
     public void testGivenACoordinateWhenCoordinateIsBlackAndIsNotInitialRowCoordinateThenReturnNull() {
-        Color color = Color.getInitialColor(this.coordinate0);
+        Color color = Color.getInitialColor(this.coordinate43);
         assertNull(color);
     }
 
     @Test
     public void testGivenACoordinateWhenCoordinateIsWhiteCoordinateThenReturnNull() {
-        Color color = Color.getInitialColor(this.coordinate1);
+        Color color = Color.getInitialColor(this.coordinate00);
         assertNull(color);
     }
 

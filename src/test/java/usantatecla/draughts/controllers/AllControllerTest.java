@@ -6,7 +6,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         StartControllerTest.class,
-        CancelControllerTest.class
+        CancelControllerTest.class,
+        MoveControllerTest.class
 })
 public class AllControllerTest {
 
